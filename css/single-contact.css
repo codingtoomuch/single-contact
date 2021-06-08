@@ -577,22 +577,16 @@ h5 {
   background: url("");
 }
 
-#view_all_info {
-  height: 95vh;
-  top: 80px !important;
-  transform: translateX(-100%) !important;
-  width: 1170px !important;
-  left: calc(100vw - 21px) !important;
-  border-radius: 10px 0 0 10px;
-}
-.view_all_info_header h4 {
-  font-size: 24px;
-}
-.view_all_info_header i {
-  height: 26px;
-  width: 26px;
-  font-size: 26px;
-  cursor: pointer;
+/* input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+} */
+
+/*****************************
+        Modal Part Css
+******************************/
+/* all info modal */
+#view_all_info_modal {
+  height: 95vh !important;
 }
 .all_info_content {
   border: 1px solid var(--gray_dark);
@@ -622,13 +616,6 @@ h5 {
   justify-content: center;
   align-items: center;
 }
-input[type="date"]::-webkit-calendar-picker-indicator {
-  display: none;
-}
-
-/*****************************
-        Modal Part Css
-******************************/
 /* voice mail modal */
 .modal {
   outline: 0 !important;
@@ -651,9 +638,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 40px;
 }
 .voice_mail_sending_tab {
-  max-width: 370px;
   margin: 0 auto;
+}
+.voice_mail_sending_tab .tabs .tab a {
+  color: var(--light_blue);
+}
+.voice_mail_sending_tab .tabs .tab a:hover,
+.voice_mail_sending_tab .tabs .tab a.active {
+  background: var(--light-blue-10);
+}
+.voice_mail_sending_tab .tabs {
+  max-width: 400px;
 }
 .modal_footer_buttons a i {
   font-size: 16px;
 }
+.voice_mail_sending_tab > h5,
+.voice_mail_send_now > p {
+  font-size: 20px;
+}
+/* Direct mail modal */
