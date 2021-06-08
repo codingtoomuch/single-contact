@@ -4,6 +4,11 @@
   --yellow-10: rgba(242, 200, 76, 0.1);
   --shade: #f0efff;
   --green: #6fcf97;
+  --green-10: rgba(39, 174, 95, 0.1);
+  --red-10: rgba(255, 38, 74, 0.1);
+  --dark-blue-05: rgba(19, 49, 89, 0.05);
+  --dark-blue-10: rgba(19, 49, 89, 0.1);
+  --dark-blue-65: rgba(19, 49, 89, 0.65);
 }
 
 /*****************************
@@ -24,8 +29,14 @@ body {
 .text-dark-blue {
   color: var(--dark_blue);
 }
+.text-dark-blue-65 {
+  color: var(--dark-blue-65);
+}
 .text-green {
   color: var(--green);
+}
+.text-yellow {
+  color: var(--yellow);
 }
 .bg-gray-light {
   background: var(--gray_light);
@@ -39,8 +50,17 @@ body {
 .bg-light-blue-10 {
   background: var(--light-blue-10);
 }
+.bg-dark-blue-10 {
+  background: var(--dark-blue-10);
+}
+.bg-dark-blue-05 {
+  background: var(--dark-blue-05);
+}
 .bg-red {
   background: var(--red);
+}
+.bg-red-10 {
+  background: var(--red-10);
 }
 .bg-red-65 {
   background: rgba(255, 38, 74, 0.65);
@@ -57,11 +77,23 @@ body {
 .bg-green {
   background: var(--green);
 }
+.bg-green-10 {
+  background: var(--green-10);
+}
 .text-center {
-  text-align: center;
+  text-align: center !important;
 }
 .text-right {
-  text-align: right;
+  text-align: right !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.radius-5 {
+  border-radius: 5px !important;
+}
+.radius-10 {
+  border-radius: 10px !important;
 }
 p,
 h6 {
@@ -137,6 +169,8 @@ h5 {
 .action_selection {
   background: transparent;
   border: 1px solid rgba(60, 126, 243, 0.1);
+  width: 135px;
+  font-size: 12px;
   box-sizing: border-box;
   border-radius: 5px;
   color: var(--light_blue);
@@ -166,14 +200,14 @@ h5 {
 .user_profile_icons {
   flex-wrap: wrap;
 }
-.user_profile_icons span i {
+.user_profile_icons .single_icon i {
   border: 1px solid var(--gray);
   border-radius: 50%;
   padding: 5px;
   cursor: pointer;
   transition: 0.3s linear;
 }
-.user_profile_icons span i:hover {
+.user_profile_icons .single_icon i:hover {
   background: var(--light_blue);
   border: 1px solid var(--light_blue);
   color: var(--white) !important;
@@ -234,18 +268,35 @@ h5 {
   padding: 1px;
 }
 
-.conversation_details {
+.center_field_tabs {
   border-radius: 10px;
 }
-.conversation_details_top {
+.center_field_top {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+.center_field_top .tab svg {
+  fill: var(--gray) !important;
+}
+.center_field_top a:hover p,
+.center_field_top a:hover i,
+.center_field_top .tab .active p,
+.center_field_top .tab .active i {
+  color: var(--light_blue) !important;
+}
+.center_field_top a:hover svg,
+.center_field_top .tab .active svg {
+  fill: var(--light_blue) !important;
 }
 .conversation_container {
   max-height: 100vh !important;
 }
-.single_message_box {
+.single_message_box,
+.single_note {
   padding: 25px 55px;
   position: relative;
+}
+.single_note {
+  border-radius: 0 0 10px 10px;
 }
 .single_message {
   border-radius: 10px 10px 10px 0;
@@ -253,10 +304,14 @@ h5 {
 .message_header {
   border-bottom: 1px solid var(--white);
 }
+.note_header {
+  border-bottom: 1px solid rgba(19, 49, 89, 0.05);
+}
 .message_header.outgoing_call {
   border-bottom: 1px solid var(--gray_dark);
 }
-.single_message_type_icon {
+.single_message_type_icon,
+.single_note_icon {
   height: 30px;
   width: 30px;
 }
@@ -270,7 +325,7 @@ h5 {
   background: rgba(242, 200, 76, 0.2);
 }
 .single_message_type_icon.call {
-  background: rgba(19, 49, 89, 0.1);
+  background: var(--dark-blue-10);
 }
 .single_message_type_icon.file {
   background: rgba(255, 38, 74, 0.1);
@@ -319,7 +374,114 @@ h5 {
 .show_more_btn.bg-red:focus {
   background: rgba(255, 38, 74, 0.65);
 }
+.show_more_btn.bg-gray-dark:hover,
+.show_more_btn.bg-gray-dark:focus {
+  background: var(--gray_dark);
+}
+/*****************************
+    center field tab part 
+******************************/
+.center_field_tabs .tabs .tab a:hover,
+.center_field_tabs .tabs .tab a.active {
+  background: var(--white);
+}
+/*****************************
+     activities tab part 
+******************************/
+.activities_tab_header {
+  overflow: auto;
+}
+.activities_tab_header a {
+  white-space: nowrap;
+}
+.activities_buttons_groups {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: rgba(19, 49, 89, 0.05);
+}
+.activities_buttons_groups .button_group a svg {
+  fill: var(--dark-blue-65);
+}
+.activities_buttons_groups .button_group {
+  height: 40px;
+  overflow: hidden;
+}
+.activities_buttons_groups .button_group a {
+  border: 1px solid var(--gray_dark);
+  transition: 0.3s linear;
+  height: 100%;
+}
+.activities_buttons_groups .button_group a:hover i {
+  color: var(--white);
+}
+.activities_buttons_groups .button_group a:hover {
+  color: var(--white);
+  background: var(--light_blue) !important;
+  border-color: var(--light_blue);
+}
+.activities_buttons_groups .button_group a:hover svg {
+  fill: var(--white);
+}
+.activities_items_table h5,
+.activities_items_table thead label span {
+  font-size: 20px !important;
+}
+.activities_items_table tbody label span {
+  font-size: 14px;
+  color: rgba(19, 49, 89, 0.5);
+}
+.activities_items_table tr {
+  border-bottom: 3px solid rgba(60, 127, 243, 0.06);
+}
+.activities_items_table input[type="checkbox"].filled-in:checked ~ span {
+  color: var(--light_blue);
+}
+.activities_items_table input[type="checkbox"].filled-in:checked tr {
+  background: var(--light_blue) !important;
+}
+.activities_items_table
+  input[type="checkbox"].filled-in
+  + span:not(.lever):after {
+  border-radius: 5px !important;
+}
+.activities_items_table
+  input[type="checkbox"].filled-in
+  + span:not(.lever):after {
+  border-color: rgba(60, 127, 243, 0.35) !important;
+}
+.activities_items_table
+  input[type="checkbox"].filled-in:checked
+  + span:not(.lever):after {
+  background: var(--light_blue) !important;
+  border-color: var(--light_blue) !important;
+}
 
+/*****************************
+  files tab and log tab part 
+******************************/
+#files_tab,
+#log_tab {
+  height: 100vh;
+}
+.files_tab_single_file,
+.log_tab_single_file {
+  border-bottom: 3px solid rgba(60, 127, 243, 0.06);
+  transition: 0.3s linear;
+}
+.files_tab_single_file .files_tabs_time,
+.log_tab_single_file .log_tabs_time {
+  font-size: 12px;
+}
+.log_tab_single_file:hover {
+  background: var(--light-blue-10);
+}
+.log_tab_single_file:hover .log_tab_heading {
+  color: var(--dark_blue);
+}
+
+/*****************************
+    collapsible right part 
+******************************/
 .lead_owner_collapsible {
   border-radius: 10px;
 }
@@ -462,4 +624,36 @@ h5 {
 }
 input[type="date"]::-webkit-calendar-picker-indicator {
   display: none;
+}
+
+/*****************************
+        Modal Part Css
+******************************/
+/* voice mail modal */
+.modal {
+  outline: 0 !important;
+}
+.modal-content .modal_header h4 {
+  font-size: 20px;
+}
+.modal_bordered_select_input,
+.modal_bordered_text_field {
+  border: 1px solid var(--gray_dark) !important;
+  color: var(--gray);
+  box-shadow: none !important;
+}
+.modal_bordered_select_input:focus,
+.modal_bordered_text_field:focus {
+  outline: 0;
+}
+.voice_mail_icon span {
+  height: 40px;
+  width: 40px;
+}
+.voice_mail_sending_tab {
+  max-width: 370px;
+  margin: 0 auto;
+}
+.modal_footer_buttons a i {
+  font-size: 16px;
 }
