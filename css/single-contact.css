@@ -683,7 +683,10 @@ h5 {
 .modal_bordered_text_field {
   border: 1px solid var(--gray_dark) !important;
   color: var(--gray);
+  /* height: 40px !important; */
   box-shadow: none !important;
+  padding-left: 15px !important;
+  box-sizing: border-box !important;
 }
 .modal_bordered_select_input:focus,
 .modal_bordered_text_field:focus {
@@ -713,4 +716,24 @@ h5 {
 .voice_mail_send_now > p {
   font-size: 20px;
 }
-/* Direct mail modal */
+/* add task modal  */
+#add_task_modal textarea {
+  height: 100px;
+}
+.add_task_top_buttons a:hover {
+  background: var(--light_blue) !important;
+  color: var(--white) !important;
+}
+.add_task_top_buttons a svg {
+  fill: var(--gray);
+  transition: 0.3s linear;
+}
+.add_task_top_buttons a:hover svg {
+  fill: var(--white);
+}
+.add_task_reminder_time {
+  max-width: 140px;
+  height: 30px;
+  font-size: 16px;
+  color: var(--dark_blue);
+}
