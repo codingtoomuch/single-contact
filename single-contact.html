@@ -960,126 +960,853 @@
                                 </div>
                                 <p class="text-gray mt-0">UI/UX Designer</p>
                                 <div class="user_profile_icons d-flex justify-content-center">
-                                    <div class="single_icon">
-                                        <i class="material-icons waves-effect m-2 text-gray">
+                                    <div id="text_message_btn" class="single_icon">
+                                        <i data-target="text_message_mini_modal"
+                                            class="dropdown-trigger material-icons waves-effect m-2 text-gray">
                                             chat_bubble
                                         </i>
                                         <p class="text-gray m-0">Text</p>
+                                        <!-- text message mini modal -->
+                                        <div id="text_message_mini_modal" class="dropdown-content radius-10 pb-2">
+                                            <div class="mt-2 text-left px-2">
+                                                <a href="#text_message_sms_modal"
+                                                    class="text-gray d-block py-2 modal-trigger">SMS</a>
+                                                <a href="#text_message_mms_modal"
+                                                    class="text-gray d-block py-2 modal-trigger">MMS</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="single_icon">
-                                        <i class="material-icons waves-effect m-2 text-gray">
+                                    <!-- text message SMS modal -->
+                                    <div id="text_message_sms_modal" class="modal mr-0 bg-gray-light">
+                                        <div class="modal-content">
+                                            <div
+                                                class="d-flex justify-content-between align-items-center modal_header mb-5">
+                                                <h4 class="m-0">Message</h4>
+                                                <i class="material-icons white-text circle bg-red modal-close">
+                                                    close
+                                                </i>
+                                            </div>
+                                            <div
+                                                class="d-flex justify-content-start align-items-center text_editor_options_container">
+                                                <div class="text_editor_options p-2">
+                                                    <svg width="14" height="17" viewBox="0 0 14 17" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M5.47794 9.59171L1.86989 5.46157L5.47794 1.33143C5.7695 0.997306 5.73549 0.489915 5.40136 0.198085C5.06723 -0.0934761 4.56011 -0.0591997 4.26801 0.27466L0.198404 4.9333C-0.0661347 5.23584 -0.0661347 5.68754 0.198404 5.99008L4.26805 10.6488C4.42707 10.8303 4.64958 10.9235 4.8734 10.9235C5.06082 10.9235 5.24902 10.8581 5.40136 10.7251C5.73553 10.4332 5.76977 9.92584 5.47794 9.59171Z"
+                                                            fill="#546376" />
+                                                        <path
+                                                            d="M9.84184 4.65979H0.572195C0.256156 4.65979 0 5.01933 0 5.463C0 5.90664 0.256156 6.26622 0.572195 6.26622H9.84184C11.5037 6.26622 12.8556 8.16393 12.8556 10.4965C12.8556 12.8291 11.5037 14.7268 9.84184 14.7268H1.33514C1.0191 14.7268 0.762945 15.0864 0.762945 15.53C0.762945 15.9736 1.0191 16.3332 1.33514 16.3332H9.84184C12.1344 16.3332 14 13.7147 14 10.4965C14 7.27827 12.1346 4.65979 9.84184 4.65979Z"
+                                                            fill="#546376" />
+                                                    </svg>
+                                                    <svg width="14" height="17" viewBox="0 0 14 17" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M8.52206 9.59171L12.1301 5.46157L8.52206 1.33143C8.2305 0.997306 8.26451 0.489915 8.59864 0.198085C8.93277 -0.0934761 9.43989 -0.0591997 9.73199 0.27466L13.8016 4.9333C14.0661 5.23584 14.0661 5.68754 13.8016 5.99008L9.73195 10.6488C9.57293 10.8303 9.35042 10.9235 9.1266 10.9235C8.93918 10.9235 8.75098 10.8581 8.59864 10.7251C8.26447 10.4332 8.23023 9.92584 8.52206 9.59171Z"
+                                                            fill="#546376" />
+                                                        <path
+                                                            d="M4.15816 4.65979H13.4278C13.7438 4.65979 14 5.01933 14 5.463C14 5.90664 13.7438 6.26622 13.4278 6.26622H4.15816C2.49632 6.26622 1.14439 8.16393 1.14439 10.4965C1.14439 12.8291 2.49632 14.7268 4.15816 14.7268H12.6649C12.9809 14.7268 13.2371 15.0864 13.2371 15.53C13.2371 15.9736 12.9809 16.3332 12.6649 16.3332H4.15816C1.86555 16.3332 0 13.7147 0 10.4965C0 7.27827 1.86536 4.65979 4.15816 4.65979Z"
+                                                            fill="#546376" />
+                                                    </svg>
+                                                </div>
+                                                <div class="text_editor_options p-2 d-flex align-items-center">
+                                                    <h5 class="text-gray m-0">Paragraph</h5>
+                                                    <i class="material-icons text-gray">
+                                                        arrow_drop_down
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-light-blue">
+                                                        format_bold
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_italic
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_underline
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_size
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        arrow_drop_down
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        format_color_fill
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        arrow_drop_down
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-light-blue">
+                                                        format_align_left
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_align_center
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_align_right
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_align_justify
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-light-blue">
+                                                        format_list_bulleted
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_list_numbered
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_indent_decrease
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_indent_increase
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        photo_library
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        link
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        format_strikethrough
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        print
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        visibility
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        video_library
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        info_outline
+                                                    </i>
+                                                </div>
+                                            </div>
+                                            <div class="message_textarea_field">
+                                                <textarea class="white p-3" placeholder="Type Here"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer mb-4">
+                                            <div class="modal_footer_buttons text-center">
+                                                <a href="#"
+                                                    class="d-inline-flex align-items-center bg-light-blue white-text p-3 radius-10">
+                                                    <i class="material-icons text-light-blue white circle p-1 mr-2">
+                                                        add
+                                                    </i>
+                                                    Send Message
+                                                </a>
+                                                <a href="#"
+                                                    class="d-inline-flex align-items-center bg-red white-text p-3 radius-10 modal-close ml-3">
+                                                    <i class="material-icons text-red white circle p-1 mr-2">
+                                                        close
+                                                    </i>
+                                                    Close
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- text message MMS modal -->
+                                    <div id="text_message_mms_modal" class="modal mr-0 bg-gray-light">
+                                        <div class="modal-content">
+                                            <div
+                                                class="d-flex justify-content-between align-items-center modal_header mb-5">
+                                                <h4 class="m-0">Multimedia Messaging Service</h4>
+                                                <i class="material-icons white-text circle bg-red modal-close">
+                                                    close
+                                                </i>
+                                            </div>
+                                            <div
+                                                class="d-flex justify-content-start align-items-center text_editor_options_container">
+                                                <div class="text_editor_options p-2">
+                                                    <svg width="14" height="17" viewBox="0 0 14 17" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M5.47794 9.59171L1.86989 5.46157L5.47794 1.33143C5.7695 0.997306 5.73549 0.489915 5.40136 0.198085C5.06723 -0.0934761 4.56011 -0.0591997 4.26801 0.27466L0.198404 4.9333C-0.0661347 5.23584 -0.0661347 5.68754 0.198404 5.99008L4.26805 10.6488C4.42707 10.8303 4.64958 10.9235 4.8734 10.9235C5.06082 10.9235 5.24902 10.8581 5.40136 10.7251C5.73553 10.4332 5.76977 9.92584 5.47794 9.59171Z"
+                                                            fill="#546376" />
+                                                        <path
+                                                            d="M9.84184 4.65979H0.572195C0.256156 4.65979 0 5.01933 0 5.463C0 5.90664 0.256156 6.26622 0.572195 6.26622H9.84184C11.5037 6.26622 12.8556 8.16393 12.8556 10.4965C12.8556 12.8291 11.5037 14.7268 9.84184 14.7268H1.33514C1.0191 14.7268 0.762945 15.0864 0.762945 15.53C0.762945 15.9736 1.0191 16.3332 1.33514 16.3332H9.84184C12.1344 16.3332 14 13.7147 14 10.4965C14 7.27827 12.1346 4.65979 9.84184 4.65979Z"
+                                                            fill="#546376" />
+                                                    </svg>
+                                                    <svg width="14" height="17" viewBox="0 0 14 17" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M8.52206 9.59171L12.1301 5.46157L8.52206 1.33143C8.2305 0.997306 8.26451 0.489915 8.59864 0.198085C8.93277 -0.0934761 9.43989 -0.0591997 9.73199 0.27466L13.8016 4.9333C14.0661 5.23584 14.0661 5.68754 13.8016 5.99008L9.73195 10.6488C9.57293 10.8303 9.35042 10.9235 9.1266 10.9235C8.93918 10.9235 8.75098 10.8581 8.59864 10.7251C8.26447 10.4332 8.23023 9.92584 8.52206 9.59171Z"
+                                                            fill="#546376" />
+                                                        <path
+                                                            d="M4.15816 4.65979H13.4278C13.7438 4.65979 14 5.01933 14 5.463C14 5.90664 13.7438 6.26622 13.4278 6.26622H4.15816C2.49632 6.26622 1.14439 8.16393 1.14439 10.4965C1.14439 12.8291 2.49632 14.7268 4.15816 14.7268H12.6649C12.9809 14.7268 13.2371 15.0864 13.2371 15.53C13.2371 15.9736 12.9809 16.3332 12.6649 16.3332H4.15816C1.86555 16.3332 0 13.7147 0 10.4965C0 7.27827 1.86536 4.65979 4.15816 4.65979Z"
+                                                            fill="#546376" />
+                                                    </svg>
+                                                </div>
+                                                <div class="text_editor_options p-2 d-flex align-items-center">
+                                                    <h5 class="text-gray m-0">Paragraph</h5>
+                                                    <i class="material-icons text-gray">
+                                                        arrow_drop_down
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-light-blue">
+                                                        format_bold
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_italic
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_underline
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_size
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        arrow_drop_down
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        format_color_fill
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        arrow_drop_down
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-light-blue">
+                                                        format_align_left
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_align_center
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_align_right
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_align_justify
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-light-blue">
+                                                        format_list_bulleted
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_list_numbered
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_indent_decrease
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_indent_increase
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        photo_library
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        link
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        format_strikethrough
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        print
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        visibility
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        video_library
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        info_outline
+                                                    </i>
+                                                </div>
+                                            </div>
+                                            <div class="message_textarea_field">
+                                                <textarea class="white p-3" placeholder="Type Here"></textarea>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col m6 s12">
+                                                    <div class="row">
+                                                        <div class="col m4 s6">
+                                                            <select
+                                                                class="d-block px-2 modal_bordered_select_input radius-5 white">
+                                                                <option value="personalize">Personalize</option>
+                                                                <option value="personalize1">Personalize</option>
+                                                                <option value="personalize2">Personalize</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col m4 s6">
+                                                            <select
+                                                                class="d-block px-2 modal_bordered_select_input radius-5 white">
+                                                                <option value="quickReply">Use Quick Reply</option>
+                                                                <option value="quickReply1">Use Quick Reply</option>
+                                                                <option value="quickReply2">Use Quick Reply</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col m6 s12">
+                                                    <div class="row">
+                                                        <div class="col m8 s6">
+                                                            <div class="d-flex justify-content-end align-items-center">
+                                                                <i class="material-icons text-red mr-2">
+                                                                    error_outline
+                                                                </i>
+                                                                <p class="text-red">Max size 15MB, Max 5 files.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col m4 s6">
+                                                            <a href="#"
+                                                                class="d-inline-flex align-items-center bg-light-blue white-text px-3 py-2 radius-10">
+                                                                <i
+                                                                    class="material-icons text-light-blue white circle p-1 mr-2">
+                                                                    attachment
+                                                                </i>
+                                                                Attach File
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="voice_mail_sending_tab">
+                                                <h5 class="text-dark-blue">Select when to send this followup</h5>
+                                                <div class="row">
+                                                    <div class="col s12">
+                                                        <ul class="tabs mb-4 radius-5">
+                                                            <li class="tab col s6"><a class="active text-light-blue"
+                                                                    href="#voice_mail_send_now">Now</a></li>
+                                                            <li class="tab col s6"><a href="#voice_mail_schedule_later"
+                                                                    class="text-light-blue">Schedule Later</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div id="voice_mail_send_now" class="col s12">
+                                                        <p class="text-gray">Sending immediately</p>
+                                                    </div>
+                                                    <div id="voice_mail_schedule_later" class="col s12">
+                                                        <div class="row px-5">
+                                                            <div class="col m5 s12 d-flex">
+                                                                <h5 class="text-dark-blue mr-3">Date</h5>
+                                                                <input type="date"
+                                                                    class="modal_bordered_text_field radius-5">
+                                                            </div>
+                                                            <div class="col m5 s12 d-flex">
+                                                                <h5 class="text-dark-blue mr-3">at</h5>
+                                                                <select
+                                                                    class="d-block px-2 modal_bordered_select_input radius-5 white">
+                                                                    <option value="8am" selected>8.00 AM</option>
+                                                                    <option value="9am">9.00 AM</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col m2 s12">
+                                                                <h5 class="text-dark-blue">Mountain Time</h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer mb-4">
+                                            <div class="modal_footer_buttons text-center">
+                                                <a href="#"
+                                                    class="d-inline-flex align-items-center bg-light-blue white-text p-3 radius-10">
+                                                    <i class="material-icons text-light-blue white circle p-1 mr-2">
+                                                        mail
+                                                    </i>
+                                                    Send MMS
+                                                </a>
+                                                <a href="#"
+                                                    class="d-inline-flex align-items-center bg-red white-text p-3 radius-10 modal-close ml-3">
+                                                    <i class="material-icons text-red white circle p-1 mr-2">
+                                                        close
+                                                    </i>
+                                                    Close
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="email_btn" class="single_icon">
+                                        <i data-target="email_mini_modal"
+                                            class="dropdown-trigger material-icons waves-effect m-2 text-gray">
                                             email
                                         </i>
                                         <p class="text-gray m-0">Email</p>
+                                        <!-- email mini modal -->
+                                        <div id="email_mini_modal" class="dropdown-content radius-10 pb-2">
+                                            <div class="mt-2 text-left pl-2">
+                                                <a href="#email__modal"
+                                                    class="text-gray d-block py-2 modal-trigger">Email</a>
+                                                <a href="#" class="text-gray d-block py-2 modal-trigger">Video Email</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- email modal -->
+                                    <div id="email__modal" class="modal mr-0 bg-gray-light">
+                                        <div class="modal-content">
+                                            <div
+                                                class="d-flex justify-content-between align-items-center modal_header mb-5">
+                                                <h4 class="m-0">Email</h4>
+                                                <i class="material-icons white-text circle bg-red modal-close">
+                                                    close
+                                                </i>
+                                            </div>
+                                            <div class="row mt-3 mb-0">
+                                                <div class="col m8 s12">
+                                                    <div class="row">
+                                                        <div class="col s2">
+                                                            <h5 class="text-dark-blue text-left">To:</h5>
+                                                        </div>
+                                                        <div class="col s10">
+                                                            <select
+                                                                class="d-block px-2 modal_bordered_select_input radius-5 white">
+                                                                <option value="email1">emailsupport@gmail.com</option>
+                                                                <option value="email2">emailsupport2@gmail.com</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col m4 s12 text-left mt-1">
+                                                    <a id="add__cc" href="#"
+                                                        class="bg-light-blue radius-5 py-2 px-3 d-inline-block white-text mr-2">Add
+                                                        CC</a>
+                                                    <a id="add__bcc" href="#"
+                                                        class="bg-light-blue-10 radius-5 py-2 px-3 d-inline-block text-light-blue">Add
+                                                        BCC</a>
+                                                </div>
+                                            </div>
+                                            <div id="cc_select_field" class="row mb-0 d-none">
+                                                <div class="col m8 s12">
+                                                    <div class="row">
+                                                        <div class="col s2">
+                                                            <h5 class="text-dark-blue text-left">CC:</h5>
+                                                        </div>
+                                                        <div class="col s10">
+                                                            <select
+                                                                class="d-block px-2 modal_bordered_select_input radius-5 white">
+                                                                <option value="email1">emailsupport@gmail.com</option>
+                                                                <option value="email2">emailsupport2@gmail.com</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col m4 s1 text-left">
+                                                    <a href="#">
+                                                        <i id="close__cc"
+                                                            class="material-icons white-text circle bg-red mt-2">
+                                                            close
+                                                        </i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div id="bcc_select_field" class="row mb-0 d-none">
+                                                <div class="col m8 s12">
+                                                    <div class="row">
+                                                        <div class="col s2">
+                                                            <h5 class="text-dark-blue text-left">BCC:</h5>
+                                                        </div>
+                                                        <div class="col s10">
+                                                            <select
+                                                                class="d-block px-2 modal_bordered_select_input radius-5 white">
+                                                                <option value="email1">emailsupport@gmail.com</option>
+                                                                <option value="email2">emailsupport2@gmail.com</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col m4 s1 text-left">
+                                                    <a href="#">
+                                                        <i id="close__bcc"
+                                                            class="material-icons white-text circle bg-red mt-2">
+                                                            close
+                                                        </i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col m8 s12 ">
+                                                    <div class="row">
+                                                        <div class="col s2">
+                                                            <h5 class="text-dark-blue text-left">From:</h5>
+                                                        </div>
+                                                        <div class="col s10">
+                                                            <select
+                                                                class="d-block px-2 modal_bordered_select_input radius-5 white">
+                                                                <option value="email1">emailsupport@gmail.com</option>
+                                                                <option value="email2">emailsupport2@gmail.com</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-0">
+                                                <div class="col m8 s12 ">
+                                                    <div class="row">
+                                                        <div class="col s2">
+                                                            <h5 class="text-dark-blue text-left">Subject:</h5>
+                                                        </div>
+                                                        <div class="col s7">
+                                                            <select
+                                                                class="d-block px-2 modal_bordered_select_input radius-5 white">
+                                                                <option value="subject1">Subject</option>
+                                                                <option value="subject2">Subject2</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col s3">
+                                                            <select
+                                                                class="d-block px-2 modal_bordered_select_input radius-5 white">
+                                                                <option value="personalized1">Personalized</option>
+                                                                <option value="personalized2">Personalized2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="d-flex justify-content-start align-items-center text_editor_options_container">
+                                                <div class="text_editor_options p-2">
+                                                    <svg width="14" height="17" viewBox="0 0 14 17" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M5.47794 9.59171L1.86989 5.46157L5.47794 1.33143C5.7695 0.997306 5.73549 0.489915 5.40136 0.198085C5.06723 -0.0934761 4.56011 -0.0591997 4.26801 0.27466L0.198404 4.9333C-0.0661347 5.23584 -0.0661347 5.68754 0.198404 5.99008L4.26805 10.6488C4.42707 10.8303 4.64958 10.9235 4.8734 10.9235C5.06082 10.9235 5.24902 10.8581 5.40136 10.7251C5.73553 10.4332 5.76977 9.92584 5.47794 9.59171Z"
+                                                            fill="#546376" />
+                                                        <path
+                                                            d="M9.84184 4.65979H0.572195C0.256156 4.65979 0 5.01933 0 5.463C0 5.90664 0.256156 6.26622 0.572195 6.26622H9.84184C11.5037 6.26622 12.8556 8.16393 12.8556 10.4965C12.8556 12.8291 11.5037 14.7268 9.84184 14.7268H1.33514C1.0191 14.7268 0.762945 15.0864 0.762945 15.53C0.762945 15.9736 1.0191 16.3332 1.33514 16.3332H9.84184C12.1344 16.3332 14 13.7147 14 10.4965C14 7.27827 12.1346 4.65979 9.84184 4.65979Z"
+                                                            fill="#546376" />
+                                                    </svg>
+                                                    <svg width="14" height="17" viewBox="0 0 14 17" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M8.52206 9.59171L12.1301 5.46157L8.52206 1.33143C8.2305 0.997306 8.26451 0.489915 8.59864 0.198085C8.93277 -0.0934761 9.43989 -0.0591997 9.73199 0.27466L13.8016 4.9333C14.0661 5.23584 14.0661 5.68754 13.8016 5.99008L9.73195 10.6488C9.57293 10.8303 9.35042 10.9235 9.1266 10.9235C8.93918 10.9235 8.75098 10.8581 8.59864 10.7251C8.26447 10.4332 8.23023 9.92584 8.52206 9.59171Z"
+                                                            fill="#546376" />
+                                                        <path
+                                                            d="M4.15816 4.65979H13.4278C13.7438 4.65979 14 5.01933 14 5.463C14 5.90664 13.7438 6.26622 13.4278 6.26622H4.15816C2.49632 6.26622 1.14439 8.16393 1.14439 10.4965C1.14439 12.8291 2.49632 14.7268 4.15816 14.7268H12.6649C12.9809 14.7268 13.2371 15.0864 13.2371 15.53C13.2371 15.9736 12.9809 16.3332 12.6649 16.3332H4.15816C1.86555 16.3332 0 13.7147 0 10.4965C0 7.27827 1.86536 4.65979 4.15816 4.65979Z"
+                                                            fill="#546376" />
+                                                    </svg>
+                                                </div>
+                                                <div class="text_editor_options p-2 d-flex align-items-center">
+                                                    <h5 class="text-gray m-0">Paragraph</h5>
+                                                    <i class="material-icons text-gray">
+                                                        arrow_drop_down
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-light-blue">
+                                                        format_bold
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_italic
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_underline
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_size
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        arrow_drop_down
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        format_color_fill
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        arrow_drop_down
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-light-blue">
+                                                        format_align_left
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_align_center
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_align_right
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_align_justify
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-light-blue">
+                                                        format_list_bulleted
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_list_numbered
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_indent_decrease
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_indent_increase
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        photo_library
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        link
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        format_strikethrough
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        print
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        visibility
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        video_library
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        info_outline
+                                                    </i>
+                                                </div>
+                                            </div>
+                                            <div class="message_textarea_field">
+                                                <textarea class="white p-3" placeholder="Type Here"></textarea>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col m6 s12">
+                                                    <div class="row">
+                                                        <div class="col m4 s6">
+                                                            <select
+                                                                class="d-block px-2 modal_bordered_select_input radius-5 white">
+                                                                <option value="personalize">Personalize</option>
+                                                                <option value="personalize1">Personalize</option>
+                                                                <option value="personalize2">Personalize</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col m4 s6">
+                                                            <select
+                                                                class="d-block px-2 modal_bordered_select_input radius-5 white">
+                                                                <option value="quickReply">Use Quick Reply</option>
+                                                                <option value="quickReply1">Use Quick Reply</option>
+                                                                <option value="quickReply2">Use Quick Reply</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col m6 s12">
+                                                    <div class="row">
+                                                        <div class="col m8 s6">
+                                                            <div class="d-flex justify-content-end align-items-center">
+                                                                <i class="material-icons text-red mr-2">
+                                                                    error_outline
+                                                                </i>
+                                                                <p class="text-red">Max size 15MB, Max 5 files.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col m4 s6">
+                                                            <a href="#"
+                                                                class="d-inline-flex align-items-center bg-light-blue white-text px-3 py-2 radius-10">
+                                                                <i
+                                                                    class="material-icons text-light-blue white circle p-1 mr-2">
+                                                                    attachment
+                                                                </i>
+                                                                Attach File
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="voice_mail_sending_tab">
+                                                <h5 class="text-dark-blue">Select when to send this followup</h5>
+                                                <div class="row">
+                                                    <div class="col s12">
+                                                        <ul class="tabs mb-4 radius-5">
+                                                            <li class="tab col s6"><a class="active text-light-blue"
+                                                                    href="#voice_mail_send_now">Now</a></li>
+                                                            <li class="tab col s6"><a href="#voice_mail_schedule_later"
+                                                                    class="text-light-blue">Schedule Later</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div id="voice_mail_send_now" class="col s12">
+                                                        <p class="text-gray">Sending immediately</p>
+                                                    </div>
+                                                    <div id="voice_mail_schedule_later" class="col s12">
+                                                        <div class="row px-5">
+                                                            <div class="col m5 s12 d-flex">
+                                                                <h5 class="text-dark-blue mr-3">Date</h5>
+                                                                <input type="date"
+                                                                    class="modal_bordered_text_field radius-5">
+                                                            </div>
+                                                            <div class="col m5 s12 d-flex">
+                                                                <h5 class="text-dark-blue mr-3">at</h5>
+                                                                <select
+                                                                    class="d-block px-2 modal_bordered_select_input radius-5 white">
+                                                                    <option value="8am" selected>8.00 AM</option>
+                                                                    <option value="9am">9.00 AM</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col m2 s12">
+                                                                <h5 class="text-dark-blue">Mountain Time</h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer mb-4">
+                                            <div class="modal_footer_buttons text-center">
+                                                <a href="#"
+                                                    class="d-inline-flex align-items-center bg-light-blue white-text p-3 radius-10">
+                                                    <i class="material-icons text-light-blue white circle p-1 mr-2">
+                                                        mail
+                                                    </i>
+                                                    Send Email
+                                                </a>
+                                                <a href="#"
+                                                    class="d-inline-flex align-items-center bg-red white-text p-3 radius-10 modal-close ml-3">
+                                                    <i class="material-icons text-red white circle p-1 mr-2">
+                                                        close
+                                                    </i>
+                                                    Close
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="single_icon">
-                                        <i class="material-icons waves-effect m-2 text-gray dropdown-trigger"
+                                        <i class="material-icons waves-effect m-2 text-gray modal-trigger"
                                             data-target="user_profile_dial_call">
                                             phone_in_talk
                                         </i>
                                         <p class="text-gray m-0">Call</p>
                                     </div>
                                     <!-- dial modal -->
-
-                                    <div id="user_profile_dial_call" class="dropdown-content top-bar-dial-result">
-                                        <div class="dial-input-wrapper">
-                                            <input type="text" placeholder="Phone Number">
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M10.8542 12.2483L12.2461 10.8555L5.14458 3.74929L3.75267 5.14211L10.8542 12.2483Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M5.14458 12.2507L12.2461 5.14453L10.8542 3.75171L3.75267 10.8579L5.14458 12.2507Z"
-                                                    fill="white" />
-                                            </svg>
-                                        </div>
-                                        <div class="numbers-pad">
-                                            <a class="btn d-flex justify-content-center align-items-center">1</a>
-                                            <a class="btn">2 <span>ABC</span></a>
-                                            <a class="btn">3 <span>DEF</span></a>
-                                            <a class="btn">4 <span>GHI</span></a>
-                                            <a class="btn">5 <span>JKL</span></a>
-                                            <a class="btn">6 <span>JKL</span></a>
-                                            <a class="btn">7 <span>PQRS</span></a>
-                                            <a class="btn">8 <span>TUV</span></a>
-                                            <a class="btn">9 <span>WXYZ</span></a>
-                                            <a class="btn d-flex justify-content-center align-items-center">*</a>
-                                            <a class="btn">0 <span>+</span></a>
-                                            <a class="btn d-flex justify-content-center align-items-center">#</a>
-                                        </div>
-                                        <div class="call-form d-flex align-items-center">
-                                            <span>Call From</span>
-                                            <select class="browser-default select-form">
-                                                <option class="selected-text" value="" selected>+123456-789</option>
-                                                <option value="1">Option 1</option>
-                                                <option value="2">Option 2</option>
-                                                <option value="3">Option 3</option>
-                                            </select>
-                                        </div>
-                                        <div class="call-button d-flex justify-content-center align-items-center">
-                                            <svg width="48" height="20" viewBox="0 0 48 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M9.59628 18.5844C11.1269 17.0538 12.8691 15.7903 14.7639 14.8368C15.6998 14.377 16.3393 13.3007 16.3278 12.4374L17.0168 7.50435C22.0169 5.98456 26.0324 5.98391 30.9843 7.50299L31.6625 12.3003C31.6618 13.3698 32.2505 14.3423 33.2129 14.8448C35.1172 15.8038 36.8594 17.0658 38.3907 18.5971C39.4968 19.7033 41.2967 19.7033 42.4028 18.5972L46.9939 14.0061C48.1001 12.8999 48.1001 11.1001 46.9939 9.99394C34.3149 -2.68512 13.685 -2.68505 1.0059 9.99401C-0.10022 11.1001 -0.100223 12.9 1.0059 14.0061L5.58423 18.5845C6.69035 19.6904 8.49022 19.6904 9.59628 18.5844Z"
-                                                    fill="white" />
-                                            </svg>
-                                        </div>
-                                        <div class="contact-dialpad">
-                                            <div class="row">
-                                                <div class="col l6">
-                                                    <div class="contact-content">
-                                                        <div
-                                                            class="people-icon d-flex justify-content-center align-items-center">
-                                                            <svg width="21" height="22" viewBox="0 0 21 22" fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                <path
-                                                                    d="M5.25 5.21053C5.25 8.08326 7.6055 10.4211 10.5 10.4211C13.3945 10.4211 15.75 8.08326 15.75 5.21053C15.75 2.33779 13.3945 0 10.5 0C7.6055 0 5.25 2.33779 5.25 5.21053ZM19.8333 22H21V20.8421C21 16.3738 17.3355 12.7368 12.8333 12.7368H8.16667C3.66333 12.7368 0 16.3738 0 20.8421V22H19.8333Z"
-                                                                    fill="#3C7EF3" />
-                                                            </svg>
+                                    <div id="user_profile_dial_call"
+                                        class="modal p-0 mr-0 awesome__scroll_bar top-bar-dial-result">
+                                        <div class="modal-content p-0">
+                                            <div class="dial-input-wrapper">
+                                                <input type="text" placeholder="Phone Number">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M10.8542 12.2483L12.2461 10.8555L5.14458 3.74929L3.75267 5.14211L10.8542 12.2483Z"
+                                                        fill="white" />
+                                                    <path
+                                                        d="M5.14458 12.2507L12.2461 5.14453L10.8542 3.75171L3.75267 10.8579L5.14458 12.2507Z"
+                                                        fill="white" />
+                                                </svg>
+                                            </div>
+                                            <div class="numbers-pad">
+                                                <a class="btn d-flex justify-content-center align-items-center">1</a>
+                                                <a class="btn">2 <span>ABC</span></a>
+                                                <a class="btn">3 <span>DEF</span></a>
+                                                <a class="btn">4 <span>GHI</span></a>
+                                                <a class="btn">5 <span>JKL</span></a>
+                                                <a class="btn">6 <span>JKL</span></a>
+                                                <a class="btn">7 <span>PQRS</span></a>
+                                                <a class="btn">8 <span>TUV</span></a>
+                                                <a class="btn">9 <span>WXYZ</span></a>
+                                                <a class="btn d-flex justify-content-center align-items-center">*</a>
+                                                <a class="btn">0 <span>+</span></a>
+                                                <a class="btn d-flex justify-content-center align-items-center">#</a>
+                                            </div>
+                                            <div class="call-form d-flex align-items-center">
+                                                <span>Call From</span>
+                                                <select class="browser-default select-form">
+                                                    <option class="selected-text" value="" selected>+123456-789</option>
+                                                    <option value="1">Option 1</option>
+                                                    <option value="2">Option 2</option>
+                                                    <option value="3">Option 3</option>
+                                                </select>
+                                            </div>
+                                            <div class="call-button d-flex justify-content-center align-items-center">
+                                                <svg width="48" height="20" viewBox="0 0 48 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.59628 18.5844C11.1269 17.0538 12.8691 15.7903 14.7639 14.8368C15.6998 14.377 16.3393 13.3007 16.3278 12.4374L17.0168 7.50435C22.0169 5.98456 26.0324 5.98391 30.9843 7.50299L31.6625 12.3003C31.6618 13.3698 32.2505 14.3423 33.2129 14.8448C35.1172 15.8038 36.8594 17.0658 38.3907 18.5971C39.4968 19.7033 41.2967 19.7033 42.4028 18.5972L46.9939 14.0061C48.1001 12.8999 48.1001 11.1001 46.9939 9.99394C34.3149 -2.68512 13.685 -2.68505 1.0059 9.99401C-0.10022 11.1001 -0.100223 12.9 1.0059 14.0061L5.58423 18.5845C6.69035 19.6904 8.49022 19.6904 9.59628 18.5844Z"
+                                                        fill="white" />
+                                                </svg>
+                                            </div>
+                                            <div class="contact-dialpad">
+                                                <div class="row">
+                                                    <div class="col l6">
+                                                        <div class="contact-content">
+                                                            <div
+                                                                class="people-icon d-flex justify-content-center align-items-center">
+                                                                <svg width="21" height="22" viewBox="0 0 21 22"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M5.25 5.21053C5.25 8.08326 7.6055 10.4211 10.5 10.4211C13.3945 10.4211 15.75 8.08326 15.75 5.21053C15.75 2.33779 13.3945 0 10.5 0C7.6055 0 5.25 2.33779 5.25 5.21053ZM19.8333 22H21V20.8421C21 16.3738 17.3355 12.7368 12.8333 12.7368H8.16667C3.66333 12.7368 0 16.3738 0 20.8421V22H19.8333Z"
+                                                                        fill="#3C7EF3" />
+                                                                </svg>
+                                                            </div>
+                                                            <span class="white-text">contact</span>
                                                         </div>
-                                                        <span class="white-text">contact</span>
                                                     </div>
-                                                </div>
-                                                <div class="col l6">
-                                                    <div class="dialpad-content">
-                                                        <div
-                                                            class="dialpad-icon d-flex justify-content-center align-items-center">
-                                                            <svg width="21" height="25" viewBox="0 0 21 25" fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                <path
-                                                                    d="M5.02761 0.300781H1.93629C1.0841 0.300781 0.390625 0.994253 0.390625 1.84644V3.90734C0.390625 4.75954 1.0841 5.45301 1.93629 5.45301H5.02761C5.87981 5.45301 6.57328 4.75954 6.57328 3.90734V1.84644C6.57328 0.994253 5.87981 0.300781 5.02761 0.300781Z"
-                                                                    fill="#3C7EF3" />
-                                                                <path
-                                                                    d="M12.2425 0.300781H9.15113C8.29894 0.300781 7.60547 0.994253 7.60547 1.84644V3.90734C7.60547 4.75954 8.29894 5.45301 9.15113 5.45301H12.2425C13.0946 5.45301 13.7881 4.75954 13.7881 3.90734V1.84644C13.7881 0.994253 13.0946 0.300781 12.2425 0.300781Z"
-                                                                    fill="#3C7EF3" />
-                                                                <path
-                                                                    d="M19.4534 0.300781H16.3621C15.5099 0.300781 14.8164 0.994253 14.8164 1.84644V3.90734C14.8164 4.75954 15.5099 5.45301 16.3621 5.45301H19.4534C20.3056 5.45301 20.9991 4.75954 20.9991 3.90734V1.84644C20.9991 0.994253 20.3055 0.300781 19.4534 0.300781Z"
-                                                                    fill="#3C7EF3" />
-                                                                <path
-                                                                    d="M5.02761 6.48438H1.93629C1.0841 6.48438 0.390625 7.17785 0.390625 8.03004V10.0909C0.390625 10.9431 1.0841 11.6366 1.93629 11.6366H5.02761C5.87981 11.6366 6.57328 10.9431 6.57328 10.0909V8.03004C6.57328 7.17785 5.87981 6.48438 5.02761 6.48438Z"
-                                                                    fill="#3C7EF3" />
-                                                                <path
-                                                                    d="M12.2425 6.48438H9.15113C8.29894 6.48438 7.60547 7.17785 7.60547 8.03004V10.0909C7.60547 10.9431 8.29894 11.6366 9.15113 11.6366H12.2425C13.0946 11.6366 13.7881 10.9431 13.7881 10.0909V8.03004C13.7881 7.17785 13.0946 6.48438 12.2425 6.48438Z"
-                                                                    fill="#3C7EF3" />
-                                                                <path
-                                                                    d="M19.4534 6.48438H16.3621C15.5099 6.48438 14.8164 7.17785 14.8164 8.03004V10.0909C14.8164 10.9431 15.5099 11.6366 16.3621 11.6366H19.4534C20.3056 11.6366 20.9991 10.9431 20.9991 10.0909V8.03004C20.9991 7.17785 20.3055 6.48438 19.4534 6.48438Z"
-                                                                    fill="#3C7EF3" />
-                                                                <path
-                                                                    d="M5.02761 12.6641H1.93629C1.0841 12.6641 0.390625 13.3575 0.390625 14.2097V16.2706C0.390625 17.1228 1.0841 17.8163 1.93629 17.8163H5.02761C5.87981 17.8163 6.57328 17.1228 6.57328 16.2706V14.2097C6.57328 13.3575 5.87981 12.6641 5.02761 12.6641Z"
-                                                                    fill="#3C7EF3" />
-                                                                <path
-                                                                    d="M12.2425 12.6641H9.15113C8.29894 12.6641 7.60547 13.3575 7.60547 14.2097V16.2706C7.60547 17.1228 8.29894 17.8163 9.15113 17.8163H12.2425C13.0946 17.8163 13.7881 17.1228 13.7881 16.2706V14.2097C13.7881 13.3575 13.0946 12.6641 12.2425 12.6641Z"
-                                                                    fill="#3C7EF3" />
-                                                                <path
-                                                                    d="M19.4534 12.6641H16.3621C15.5099 12.6641 14.8164 13.3575 14.8164 14.2097V16.2706C14.8164 17.1228 15.5099 17.8163 16.3621 17.8163H19.4534C20.3056 17.8163 20.9991 17.1228 20.9991 16.2706V14.2097C20.9991 13.3575 20.3055 12.6641 19.4534 12.6641Z"
-                                                                    fill="#3C7EF3" />
-                                                                <path
-                                                                    d="M12.2425 18.8477H9.15113C8.29894 18.8477 7.60547 19.5411 7.60547 20.3933V22.4542C7.60547 23.3064 8.29894 23.9999 9.15113 23.9999H12.2425C13.0946 23.9999 13.7881 23.3064 13.7881 22.4542V20.3933C13.7881 19.5411 13.0946 18.8477 12.2425 18.8477Z"
-                                                                    fill="#3C7EF3" />
-                                                            </svg>
+                                                    <div class="col l6">
+                                                        <div class="dialpad-content">
+                                                            <div
+                                                                class="dialpad-icon d-flex justify-content-center align-items-center">
+                                                                <svg width="21" height="25" viewBox="0 0 21 25"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M5.02761 0.300781H1.93629C1.0841 0.300781 0.390625 0.994253 0.390625 1.84644V3.90734C0.390625 4.75954 1.0841 5.45301 1.93629 5.45301H5.02761C5.87981 5.45301 6.57328 4.75954 6.57328 3.90734V1.84644C6.57328 0.994253 5.87981 0.300781 5.02761 0.300781Z"
+                                                                        fill="#3C7EF3" />
+                                                                    <path
+                                                                        d="M12.2425 0.300781H9.15113C8.29894 0.300781 7.60547 0.994253 7.60547 1.84644V3.90734C7.60547 4.75954 8.29894 5.45301 9.15113 5.45301H12.2425C13.0946 5.45301 13.7881 4.75954 13.7881 3.90734V1.84644C13.7881 0.994253 13.0946 0.300781 12.2425 0.300781Z"
+                                                                        fill="#3C7EF3" />
+                                                                    <path
+                                                                        d="M19.4534 0.300781H16.3621C15.5099 0.300781 14.8164 0.994253 14.8164 1.84644V3.90734C14.8164 4.75954 15.5099 5.45301 16.3621 5.45301H19.4534C20.3056 5.45301 20.9991 4.75954 20.9991 3.90734V1.84644C20.9991 0.994253 20.3055 0.300781 19.4534 0.300781Z"
+                                                                        fill="#3C7EF3" />
+                                                                    <path
+                                                                        d="M5.02761 6.48438H1.93629C1.0841 6.48438 0.390625 7.17785 0.390625 8.03004V10.0909C0.390625 10.9431 1.0841 11.6366 1.93629 11.6366H5.02761C5.87981 11.6366 6.57328 10.9431 6.57328 10.0909V8.03004C6.57328 7.17785 5.87981 6.48438 5.02761 6.48438Z"
+                                                                        fill="#3C7EF3" />
+                                                                    <path
+                                                                        d="M12.2425 6.48438H9.15113C8.29894 6.48438 7.60547 7.17785 7.60547 8.03004V10.0909C7.60547 10.9431 8.29894 11.6366 9.15113 11.6366H12.2425C13.0946 11.6366 13.7881 10.9431 13.7881 10.0909V8.03004C13.7881 7.17785 13.0946 6.48438 12.2425 6.48438Z"
+                                                                        fill="#3C7EF3" />
+                                                                    <path
+                                                                        d="M19.4534 6.48438H16.3621C15.5099 6.48438 14.8164 7.17785 14.8164 8.03004V10.0909C14.8164 10.9431 15.5099 11.6366 16.3621 11.6366H19.4534C20.3056 11.6366 20.9991 10.9431 20.9991 10.0909V8.03004C20.9991 7.17785 20.3055 6.48438 19.4534 6.48438Z"
+                                                                        fill="#3C7EF3" />
+                                                                    <path
+                                                                        d="M5.02761 12.6641H1.93629C1.0841 12.6641 0.390625 13.3575 0.390625 14.2097V16.2706C0.390625 17.1228 1.0841 17.8163 1.93629 17.8163H5.02761C5.87981 17.8163 6.57328 17.1228 6.57328 16.2706V14.2097C6.57328 13.3575 5.87981 12.6641 5.02761 12.6641Z"
+                                                                        fill="#3C7EF3" />
+                                                                    <path
+                                                                        d="M12.2425 12.6641H9.15113C8.29894 12.6641 7.60547 13.3575 7.60547 14.2097V16.2706C7.60547 17.1228 8.29894 17.8163 9.15113 17.8163H12.2425C13.0946 17.8163 13.7881 17.1228 13.7881 16.2706V14.2097C13.7881 13.3575 13.0946 12.6641 12.2425 12.6641Z"
+                                                                        fill="#3C7EF3" />
+                                                                    <path
+                                                                        d="M19.4534 12.6641H16.3621C15.5099 12.6641 14.8164 13.3575 14.8164 14.2097V16.2706C14.8164 17.1228 15.5099 17.8163 16.3621 17.8163H19.4534C20.3056 17.8163 20.9991 17.1228 20.9991 16.2706V14.2097C20.9991 13.3575 20.3055 12.6641 19.4534 12.6641Z"
+                                                                        fill="#3C7EF3" />
+                                                                    <path
+                                                                        d="M12.2425 18.8477H9.15113C8.29894 18.8477 7.60547 19.5411 7.60547 20.3933V22.4542C7.60547 23.3064 8.29894 23.9999 9.15113 23.9999H12.2425C13.0946 23.9999 13.7881 23.3064 13.7881 22.4542V20.3933C13.7881 19.5411 13.0946 18.8477 12.2425 18.8477Z"
+                                                                        fill="#3C7EF3" />
+                                                                </svg>
+                                                            </div>
+                                                            <span class="white-text">dialpad</span>
                                                         </div>
-                                                        <span class="white-text">dialpad</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1315,13 +2042,565 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="single_icon">
-                                        <i class="material-icons waves-effect m-2 text-gray">
+                                    <div id="more_option_icon" class="single_icon">
+                                        <i data-target="more_option_mini_modal"
+                                            class="dropdown-trigger material-icons waves-effect m-2 text-gray">
                                             more_vert
                                         </i>
                                         <p class="text-gray m-0">More</p>
+                                        <!-- more option mini modal -->
+                                        <div id="more_option_mini_modal" class="dropdown-content radius-10 pb-2">
+                                            <div class="mt-2 text-left px-2">
+                                                <a href="#add_note_modal"
+                                                    class="text-gray d-block py-2 modal-trigger">Add Note</a>
+                                                <a href="#" class="text-gray d-block py-2 modal-trigger">Add Task</a>
+                                                <a href="#activities_modal"
+                                                    class="text-gray d-block py-2 modal-trigger">Activity</a>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <!-- add note modal -->
+                                    <div id="add_note_modal" class="modal mr-0 bg-gray-light">
+                                        <div class="modal-content">
+                                            <div
+                                                class="d-flex justify-content-between align-items-center modal_header mb-5">
+                                                <h4 class="m-0">Add Note</h4>
+                                                <i class="material-icons white-text circle bg-red modal-close">
+                                                    close
+                                                </i>
+                                            </div>
+                                            <div
+                                                class="d-flex justify-content-start align-items-center text_editor_options_container">
+                                                <div class="text_editor_options p-2">
+                                                    <svg width="14" height="17" viewBox="0 0 14 17" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M5.47794 9.59171L1.86989 5.46157L5.47794 1.33143C5.7695 0.997306 5.73549 0.489915 5.40136 0.198085C5.06723 -0.0934761 4.56011 -0.0591997 4.26801 0.27466L0.198404 4.9333C-0.0661347 5.23584 -0.0661347 5.68754 0.198404 5.99008L4.26805 10.6488C4.42707 10.8303 4.64958 10.9235 4.8734 10.9235C5.06082 10.9235 5.24902 10.8581 5.40136 10.7251C5.73553 10.4332 5.76977 9.92584 5.47794 9.59171Z"
+                                                            fill="#546376" />
+                                                        <path
+                                                            d="M9.84184 4.65979H0.572195C0.256156 4.65979 0 5.01933 0 5.463C0 5.90664 0.256156 6.26622 0.572195 6.26622H9.84184C11.5037 6.26622 12.8556 8.16393 12.8556 10.4965C12.8556 12.8291 11.5037 14.7268 9.84184 14.7268H1.33514C1.0191 14.7268 0.762945 15.0864 0.762945 15.53C0.762945 15.9736 1.0191 16.3332 1.33514 16.3332H9.84184C12.1344 16.3332 14 13.7147 14 10.4965C14 7.27827 12.1346 4.65979 9.84184 4.65979Z"
+                                                            fill="#546376" />
+                                                    </svg>
+                                                    <svg width="14" height="17" viewBox="0 0 14 17" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M8.52206 9.59171L12.1301 5.46157L8.52206 1.33143C8.2305 0.997306 8.26451 0.489915 8.59864 0.198085C8.93277 -0.0934761 9.43989 -0.0591997 9.73199 0.27466L13.8016 4.9333C14.0661 5.23584 14.0661 5.68754 13.8016 5.99008L9.73195 10.6488C9.57293 10.8303 9.35042 10.9235 9.1266 10.9235C8.93918 10.9235 8.75098 10.8581 8.59864 10.7251C8.26447 10.4332 8.23023 9.92584 8.52206 9.59171Z"
+                                                            fill="#546376" />
+                                                        <path
+                                                            d="M4.15816 4.65979H13.4278C13.7438 4.65979 14 5.01933 14 5.463C14 5.90664 13.7438 6.26622 13.4278 6.26622H4.15816C2.49632 6.26622 1.14439 8.16393 1.14439 10.4965C1.14439 12.8291 2.49632 14.7268 4.15816 14.7268H12.6649C12.9809 14.7268 13.2371 15.0864 13.2371 15.53C13.2371 15.9736 12.9809 16.3332 12.6649 16.3332H4.15816C1.86555 16.3332 0 13.7147 0 10.4965C0 7.27827 1.86536 4.65979 4.15816 4.65979Z"
+                                                            fill="#546376" />
+                                                    </svg>
+                                                </div>
+                                                <div class="text_editor_options p-2 d-flex align-items-center">
+                                                    <h5 class="text-gray m-0">Paragraph</h5>
+                                                    <i class="material-icons text-gray">
+                                                        arrow_drop_down
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-light-blue">
+                                                        format_bold
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_italic
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_underline
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_size
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        arrow_drop_down
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        format_color_fill
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        arrow_drop_down
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-light-blue">
+                                                        format_align_left
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_align_center
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_align_right
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_align_justify
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-light-blue">
+                                                        format_list_bulleted
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_list_numbered
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_indent_decrease
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        format_indent_increase
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        photo_library
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        link
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        format_strikethrough
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        print
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        visibility
+                                                    </i>
+                                                    <i class="material-icons text-gray">
+                                                        video_library
+                                                    </i>
+                                                </div>
+                                                <div class="text_editor_options p-2">
+                                                    <i class="material-icons text-gray">
+                                                        info_outline
+                                                    </i>
+                                                </div>
+                                            </div>
+                                            <div class="message_textarea_field">
+                                                <textarea class="white p-3" placeholder="Type Here"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer mb-4">
+                                            <div class="modal_footer_buttons text-center">
+                                                <a href="#"
+                                                    class="d-inline-flex align-items-center bg-light-blue white-text p-3 radius-10">
+                                                    <i class="material-icons text-light-blue white circle p-1 mr-2">
+                                                        add
+                                                    </i>
+                                                    Add Note
+                                                </a>
+                                                <a href="#"
+                                                    class="d-inline-flex align-items-center bg-red white-text p-3 radius-10 modal-close ml-3">
+                                                    <i class="material-icons text-red white circle p-1 mr-2">
+                                                        close
+                                                    </i>
+                                                    Close
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- activities modal -->
+                                    <div id="activities_modal" class="modal mr-0 bg-gray-light">
+                                        <div class="modal-content">
+                                            <div
+                                                class="d-flex justify-content-between align-items-center modal_header mb-5">
+                                                <h4 class="m-0">Activity</h4>
+                                                <i class="material-icons white-text circle bg-red modal-close">
+                                                    close
+                                                </i>
+                                            </div>
+                                            <div class="col s12 white">
+                                                <div class="activities_tab_header d-flex align-items-center my-2">
+                                                    <a href="#"
+                                                        class="waves-effect bg-gray-light text-dark-blue radius-5 py-2 px-3 mr-1">Today</a>
+                                                    <a href="#"
+                                                        class="waves-effect bg-gray-light text-dark-blue radius-5 py-2 px-3 d-flex align-items-center mr-1">
+                                                        <i class="material-icons mr-3">
+                                                            navigate_before
+                                                        </i>
+                                                        April 2021
+                                                        <i class="material-icons ml-3">
+                                                            navigate_next
+                                                        </i>
+                                                    </a>
+                                                    <a href="#"
+                                                        class="waves-effect bg-light-blue-10 text-light-blue radius-5 py-2 px-3 d-flex align-items-center mr-1">
+                                                        <i class="material-icons mr-2 text-light-blue">
+                                                            watch_later
+                                                        </i>
+                                                        Today Due : 2
+                                                    </a>
+                                                    <a href="#"
+                                                        class="waves-effect bg-red-10 text-red radius-5 py-2 px-3 d-flex align-items-center mr-1">
+                                                        <svg class="mr-2" width="20" height="20" viewBox="0 0 20 20"
+                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M17.0465 2.95354C16.1228 2.0207 15.0238 1.27956 13.8128 0.772706C12.6018 0.265849 11.3026 0.00326128 9.98984 3.01863e-05C8.67705 -0.00320091 7.37656 0.252988 6.16309 0.753878C4.94961 1.25477 3.84706 1.99049 2.91877 2.91877C1.99049 3.84706 1.25477 4.94961 0.753878 6.16309C0.252988 7.37656 -0.00320091 8.67705 3.01863e-05 9.98984C0.00326128 11.3026 0.265849 12.6018 0.772706 13.8128C1.27956 15.0238 2.0207 16.1228 2.95354 17.0465C3.87725 17.9793 4.97616 18.7204 6.18716 19.2273C7.39816 19.7342 8.69737 19.9967 10.0102 20C11.3229 20.0032 12.6234 19.747 13.8369 19.2461C15.0504 18.7452 16.1529 18.0095 17.0812 17.0812C18.0095 16.1529 18.7452 15.0504 19.2461 13.8369C19.747 12.6234 20.0032 11.3229 20 10.0102C19.9967 8.69737 19.7342 7.39816 19.2273 6.18716C18.7204 4.97616 17.9793 3.87725 17.0465 2.95354ZM13.2031 7.86458C13.4143 7.86458 13.6207 7.9272 13.7963 8.04452C13.9719 8.16184 14.1088 8.32859 14.1896 8.52369C14.2704 8.71879 14.2915 8.93347 14.2503 9.14059C14.2091 9.3477 14.1074 9.53795 13.9581 9.68727C13.8088 9.8366 13.6186 9.93829 13.4114 9.97948C13.2043 10.0207 12.9896 9.99954 12.7945 9.91873C12.5994 9.83791 12.4327 9.70106 12.3154 9.52548C12.198 9.34989 12.1354 9.14346 12.1354 8.93229C12.1351 8.79198 12.1624 8.65298 12.216 8.52328C12.2695 8.39358 12.3481 8.27573 12.4474 8.17652C12.5466 8.0773 12.6644 7.99867 12.7941 7.94513C12.9238 7.8916 13.0628 7.86422 13.2031 7.86458ZM6.79686 7.86458C7.00804 7.86458 7.21447 7.9272 7.39005 8.04452C7.56564 8.16184 7.70249 8.32859 7.7833 8.52369C7.86411 8.71879 7.88526 8.93347 7.84406 9.14059C7.80286 9.3477 7.70117 9.53795 7.55185 9.68727C7.40253 9.8366 7.21228 9.93829 7.00516 9.97948C6.79805 10.0207 6.58337 9.99954 6.38827 9.91873C6.19317 9.83791 6.02641 9.70106 5.90909 9.52548C5.79177 9.34989 5.72915 9.14346 5.72915 8.93229C5.7288 8.79198 5.75618 8.65298 5.80971 8.52328C5.86324 8.39358 5.94188 8.27573 6.04109 8.17652C6.14031 8.0773 6.25815 7.99867 6.38785 7.94513C6.51755 7.8916 6.65655 7.86422 6.79686 7.86458ZM10 11.4236C12.0206 11.4236 13.7259 12.7356 14.2584 14.5302C14.3029 14.6868 14.3621 14.9827 14.3621 14.9827H5.64018C5.64018 14.9827 5.69845 14.685 5.74383 14.5302C6.2679 12.7347 7.97713 11.4236 10 11.4236Z"
+                                                                fill="#FF264A" />
+                                                        </svg>
+                                                        Overdue : 77
+                                                    </a>
+                                                    <a href="#"
+                                                        class="waves-effect bg-green-10 text-green radius-5 py-2 px-3 d-flex align-items-center mr-1">
+                                                        <i class="material-icons mr-2 text-green">
+                                                            emoji_emotions
+                                                        </i>
+                                                        Complete: 38
+                                                    </a>
+                                                    <span
+                                                        class="circle d-flex bg-light-blue justify-content-center align-items-center ml-2">
+                                                        <i class="material-icons white-text">
+                                                            add
+                                                        </i>
+                                                    </span>
+                                                </div>
+                                                <div
+                                                    class="activities_buttons_groups d-flex justify-content-between py-2">
+                                                    <div class="button_group d-flex align-items-center radius-5">
+                                                        <a href="#"
+                                                            class="active text-dark-blue-65 white px-2 bg-light-blue d-flex align-items-center justify-content-center">All</a>
+                                                        <a href="#"
+                                                            class="px-2 d-inline-block white d-flex align-items-center justify-content-center">
+                                                            <i class="material-icons text-dark-blue-65">
+                                                                call
+                                                            </i>
+                                                        </a>
+                                                        <a href="#"
+                                                            class="px-2 d-inline-block white d-flex align-items-center justify-content-center">
+                                                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M4.61589 18.5021H16.2826C17.2017 18.5021 17.9492 17.7546 17.9492 16.8354V5.16878C17.9492 4.24962 17.2017 3.50212 16.2826 3.50212H14.6159V1.83545H12.9492V3.50212H7.94922V1.83545H6.28255V3.50212H4.61589C3.69672 3.50212 2.94922 4.24962 2.94922 5.16878V16.8354C2.94922 17.7546 3.69672 18.5021 4.61589 18.5021ZM4.61589 6.00212H16.2826V7.66878H4.61589V6.00212Z" />
+                                                            </svg>
 
+                                                        </a>
+                                                        <a href="#"
+                                                            class="px-2 d-inline-block white d-flex align-items-center justify-content-center">
+                                                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M19.2322 3.72473L17.1766 1.66917C17 1.50071 16.7652 1.40674 16.5211 1.40674C16.277 1.40674 16.0422 1.50071 15.8655 1.66917L14.0378 3.50251H4.2322C3.93752 3.50251 3.6549 3.61957 3.44653 3.82794C3.23816 4.03632 3.12109 4.31893 3.12109 4.61362V16.8358C3.12109 17.1305 3.23816 17.4131 3.44653 17.6215C3.6549 17.8299 3.93752 17.947 4.2322 17.947H16.4544C16.7491 17.947 17.0317 17.8299 17.2401 17.6215C17.4485 17.4131 17.5655 17.1305 17.5655 16.8358V6.70251L19.2322 5.03584C19.4059 4.86189 19.5035 4.62611 19.5035 4.38028C19.5035 4.13446 19.4059 3.89868 19.2322 3.72473ZM11.36 11.3525L9.0322 11.8692L9.58776 9.56362L14.8933 4.24695L16.6878 6.04139L11.36 11.3525ZM17.2878 5.40806L15.4933 3.61362L16.5211 2.58584L18.3155 4.38028L17.2878 5.40806Z" />
+                                                            </svg>
+
+                                                        </a>
+                                                        <a href="#"
+                                                            class="px-2 d-inline-block white d-flex align-items-center justify-content-center">
+                                                            <i class="material-icons text-dark-blue-65">
+                                                                mail
+                                                            </i>
+                                                        </a>
+                                                        <a href="#"
+                                                            class="px-2 d-inline-block white d-flex align-items-center justify-content-center">
+                                                            <i class="material-icons text-dark-blue-65">
+                                                                person_add
+                                                            </i>
+                                                        </a>
+                                                        <a href="#"
+                                                            class="px-2 d-inline-block white d-flex align-items-center justify-content-center">
+                                                            <i class="material-icons text-dark-blue-65">
+                                                                more_vert
+                                                            </i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="button_group d-flex align-items-center radius-5">
+                                                        <a href="#"
+                                                            class="active text-dark-blue-65 white px-2 bg-light-blue d-flex align-items-center justify-content-center">Planned</a>
+                                                        <a href="#"
+                                                            class="text-dark-blue-65 white px-2 bg-light-blue d-flex align-items-center justify-content-center">Overdue</a>
+                                                        <a href="#"
+                                                            class="text-dark-blue-65 white px-2 bg-light-blue d-flex align-items-center justify-content-center">Today</a>
+                                                        <a href="#"
+                                                            class="text-dark-blue-65 white px-2 bg-light-blue d-flex align-items-center justify-content-center">Tomorrow</a>
+                                                        <a href="#"
+                                                            class="text-dark-blue-65 white px-2 bg-light-blue d-flex align-items-center justify-content-center">More</a>
+                                                    </div>
+                                                </div>
+                                                <table class="activities_items_table">
+                                                    <thead class="bg-gray-light py-1">
+                                                        <tr class="px-1">
+                                                            <td>
+                                                                <label>
+                                                                    <input type="checkbox" class="filled-in" />
+                                                                    <span class="text-dark-blue"> Title</span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue">Due Date</h5>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue">Duration</h5>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue">Deal Title</h5>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <label>
+                                                                    <input type="checkbox" class="filled-in" />
+                                                                    <span
+                                                                        class="d-flex justify-content-start align-items-center"><i
+                                                                            class="material-icons mr-2">
+                                                                            phone
+                                                                        </i>
+                                                                        Awesome fell
+                                                                    </span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <p class="m-0 text-dark-blue-65">April 28th 2021 12:51
+                                                                    pm</p>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">01:30</h5>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">Test Deal </h5>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label>
+                                                                    <input type="checkbox" class="filled-in" />
+                                                                    <span
+                                                                        class="d-flex justify-content-start align-items-center"><i
+                                                                            class="material-icons mr-2">
+                                                                            phone
+                                                                        </i>
+                                                                        Awesome fell
+                                                                    </span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <p class="m-0 text-dark-blue-65">April 28th 2021 12:51
+                                                                    pm</p>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">01:30</h5>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">Test Deal </h5>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label>
+                                                                    <input type="checkbox" class="filled-in" />
+                                                                    <span
+                                                                        class="d-flex justify-content-start align-items-center"><i
+                                                                            class="material-icons mr-2">
+                                                                            phone
+                                                                        </i>
+                                                                        Awesome fell
+                                                                    </span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <p class="m-0 text-dark-blue-65">April 28th 2021 12:51
+                                                                    pm</p>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">01:30</h5>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">Test Deal </h5>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label>
+                                                                    <input type="checkbox" class="filled-in" />
+                                                                    <span
+                                                                        class="d-flex justify-content-start align-items-center"><i
+                                                                            class="material-icons mr-2">
+                                                                            phone
+                                                                        </i>
+                                                                        Awesome fell
+                                                                    </span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <p class="m-0 text-red">April 28th 2021 12:51 pm</p>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">01:30</h5>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">Test Deal </h5>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label>
+                                                                    <input type="checkbox" class="filled-in" />
+                                                                    <span
+                                                                        class="d-flex justify-content-start align-items-center"><i
+                                                                            class="material-icons mr-2">
+                                                                            phone
+                                                                        </i>
+                                                                        Awesome fell
+                                                                    </span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <p class="m-0 text-dark-blue-65">April 28th 2021 12:51
+                                                                    pm</p>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">01:30</h5>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">Test Deal </h5>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label>
+                                                                    <input type="checkbox" class="filled-in" />
+                                                                    <span
+                                                                        class="d-flex justify-content-start align-items-center"><i
+                                                                            class="material-icons mr-2">
+                                                                            phone
+                                                                        </i>
+                                                                        Awesome fell
+                                                                    </span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <p class="m-0 text-dark-blue-65">April 28th 2021 12:51
+                                                                    pm</p>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">01:30</h5>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">Test Deal </h5>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label>
+                                                                    <input type="checkbox" class="filled-in" />
+                                                                    <span
+                                                                        class="d-flex justify-content-start align-items-center"><i
+                                                                            class="material-icons mr-2">
+                                                                            phone
+                                                                        </i>
+                                                                        Awesome fell
+                                                                    </span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <p class="m-0 text-yellow">April 28th 2021 12:51 pm</p>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">01:30</h5>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">Test Deal </h5>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label>
+                                                                    <input type="checkbox" class="filled-in" />
+                                                                    <span
+                                                                        class="d-flex justify-content-start align-items-center"><i
+                                                                            class="material-icons mr-2">
+                                                                            phone
+                                                                        </i>
+                                                                        Awesome fell
+                                                                    </span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <p class="m-0 text-dark-blue-65">April 28th 2021 12:51
+                                                                    pm</p>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">01:30</h5>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">Test Deal </h5>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label>
+                                                                    <input type="checkbox" class="filled-in" />
+                                                                    <span
+                                                                        class="d-flex justify-content-start align-items-center"><i
+                                                                            class="material-icons mr-2">
+                                                                            phone
+                                                                        </i>
+                                                                        Awesome fell
+                                                                    </span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <p class="m-0 text-dark-blue-65">April 28th 2021 12:51
+                                                                    pm</p>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">01:30</h5>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">Test Deal </h5>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label>
+                                                                    <input type="checkbox" class="filled-in" />
+                                                                    <span
+                                                                        class="d-flex justify-content-start align-items-center"><i
+                                                                            class="material-icons mr-2">
+                                                                            phone
+                                                                        </i>
+                                                                        Awesome fell
+                                                                    </span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <p class="m-0 text-dark-blue-65">April 28th 2021 12:51
+                                                                    pm</p>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">01:30</h5>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="m-0 text-dark-blue-65">Test Deal </h5>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="modal_footer_buttons text-center pb-3">
+                                                <a href="#"
+                                                    class="d-inline-flex align-items-center bg-light-blue white-text p-3 radius-10">
+                                                    <i class="material-icons text-light-blue white circle p-1 mr-2">
+                                                        add
+                                                    </i>
+                                                    Add TAsk
+                                                </a>
+                                                <a href="#"
+                                                    class="d-inline-flex align-items-center bg-red white-text p-3 radius-10 modal-close ml-3">
+                                                    <i class="material-icons text-red white circle p-1 mr-2">
+                                                        close
+                                                    </i>
+                                                    Close
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row mt-4">
@@ -2792,8 +4071,6 @@
                                                         d="M0.874693 5.30859C0.792338 5.30859 0.726713 5.37742 0.730636 5.45969L1.11141 13.4513C1.1466 14.1909 1.7541 14.7701 2.49429 14.7701H9.50333C10.2435 14.7701 10.851 14.1909 10.8862 13.4513L11.267 5.45969C11.2709 5.37742 11.2053 5.30859 11.1229 5.30859H0.874693ZM7.84496 6.46244C7.84496 6.20744 8.0515 6.0009 8.3065 6.0009C8.5615 6.0009 8.76804 6.20744 8.76804 6.46244V12.4624C8.76804 12.7174 8.5615 12.924 8.3065 12.924C8.0515 12.924 7.84496 12.7174 7.84496 12.4624V6.46244ZM5.53727 6.46244C5.53727 6.20744 5.74381 6.0009 5.99881 6.0009C6.25381 6.0009 6.46035 6.20744 6.46035 6.46244V12.4624C6.46035 12.7174 6.25381 12.924 5.99881 12.924C5.74381 12.924 5.53727 12.7174 5.53727 12.4624V6.46244ZM3.22958 6.46244C3.22958 6.20744 3.43612 6.0009 3.69112 6.0009C3.94612 6.0009 4.15265 6.20744 4.15265 6.46244V12.4624C4.15265 12.7174 3.94612 12.924 3.69112 12.924C3.43612 12.924 3.22958 12.7174 3.22958 12.4624V6.46244Z"
                                                         fill="#FF264A" />
                                                 </svg>
-
-
                                             </div>
                                         </div>
                                         <div class="message_body pt-0 pl-5 pr-1 pb-3">
@@ -2858,7 +4135,7 @@
                                     <div class="activities_buttons_groups d-flex justify-content-between py-2">
                                         <div class="button_group d-flex align-items-center radius-5">
                                             <a href="#"
-                                                class="text-dark-blue-65 white px-2 bg-light-blue d-flex align-items-center justify-content-center">All</a>
+                                                class="active text-dark-blue-65 white px-2 bg-light-blue d-flex align-items-center justify-content-center">All</a>
                                             <a href="#"
                                                 class="px-2 d-inline-block white d-flex align-items-center justify-content-center">
                                                 <i class="material-icons text-dark-blue-65">
@@ -2904,7 +4181,7 @@
                                         </div>
                                         <div class="button_group d-flex align-items-center radius-5">
                                             <a href="#"
-                                                class="text-dark-blue-65 white px-2 bg-light-blue d-flex align-items-center justify-content-center">Planned</a>
+                                                class="active text-dark-blue-65 white px-2 bg-light-blue d-flex align-items-center justify-content-center">Planned</a>
                                             <a href="#"
                                                 class="text-dark-blue-65 white px-2 bg-light-blue d-flex align-items-center justify-content-center">Overdue</a>
                                             <a href="#"
@@ -4042,9 +5319,7 @@
             $('.collapsible').collapsible();
         });
 
-
     </script>
-
 
 </body>
 
