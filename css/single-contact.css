@@ -689,7 +689,8 @@ audio {
 .send__immediately {
   font-size: 20px;
 }
-select.quick_reply {
+select.quick_reply,
+select.pre_recorded {
   -moz-appearance: none;
   -webkit-appearance: none;
 }
@@ -704,6 +705,15 @@ select.quick_reply {
 }
 #user_profile_dial_call::before {
   background: url("");
+}
+/* email modal */
+select.modal_bordered_select_input.pre_recorded,
+select.modal_bordered_select_input.quick_reply {
+  background-image: url(../images/single-contact/badge.png);
+  background-repeat: no-repeat;
+  background-size: 0.8em auto;
+  background-position: 10px center;
+  padding-left: 30px !important;
 }
 /* voice mail modal */
 .modal {
