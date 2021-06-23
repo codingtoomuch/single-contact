@@ -310,6 +310,7 @@ h5 {
 }
 .note_header {
   border-bottom: 1px solid rgba(19, 49, 89, 0.05);
+  white-space: nowrap;
 }
 .message_header.outgoing_call {
   border-bottom: 1px solid var(--gray_dark);
@@ -578,6 +579,51 @@ audio {
 .now_schedule_later_tab .tab a {
   text-transform: capitalize;
 }
+
+/* switch */
+.switch-icon {
+  position: absolute;
+  width: 36px;
+  height: 45px;
+  top: 105px;
+  z-index: -1;
+  right: 0;
+  background: #3c7ef3;
+  -webkit-box-shadow: 0px 20px 15px rgb(60 126 243 / 24%);
+  box-shadow: 0px 20px 15px rgb(60 126 243 / 24%);
+  border-radius: 0px 10px 10px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.switch-icon svg {
+  margin-right: 3px;
+  pointer-events: all;
+}
+/*****************************
+      tiny text editor
+******************************/
+.tox.tox-tinymce {
+  border: 0;
+  border-radius: 10px;
+}
+.tox-statusbar {
+  display: none !important;
+}
+.tox .tox-toolbar,
+.tox .tox-toolbar__overflow,
+.tox .tox-toolbar__primary {
+  border: 1px solid var(--gray_dark);
+  border-radius: 10px 10px 0 0;
+}
 /*****************************
         audio Player
 ******************************/
@@ -721,15 +767,6 @@ input[type="range"]:focus::-ms-fill-lower {
 input[type="range"]:focus::-ms-fill-upper {
   background: #d9e6fd;
 }
-/* input[type="range"]::-webkit-slider-runnable-track,
-input[type="range"]::-moz-range-track,
-input[type="range"]::-moz-range-thumb,
-input[type="range"]::-moz-range-progress,
-input[type="range"]::-ms-fill-lower,
-input[type="range"]::-ms-thumb,
-input[type="range"]:focus::-ms-fill-lower{
-  background-color: #546376 !important;
-} */
 
 /*****************************
         Modal Part Css
@@ -820,25 +857,7 @@ input[type="range"]:focus::-ms-fill-lower{
   width: fit-content;
   border-radius: 10px 0 0 10px;
 }
-.text_editor_options {
-  border: 1px solid var(--gray_dark);
-  height: 40px;
-  border-left: none;
-  background: var(--white);
-}
-.text_editor_options:first-child {
-  border-left: 1px solid var(--gray_dark);
-  border-radius: 10px 0 0 0;
-}
-.text_editor_options:last-child {
-  border-radius: 0 10px 0 0;
-}
-.message_textarea_field textarea {
-  border: 0;
-  outline: 0 !important;
-  border-radius: 0 10px 10px 10px;
-  min-height: 300px;
-}
+
 .send__immediately {
   font-size: 20px;
 }
@@ -1184,6 +1203,12 @@ select.modal_bordered_select_input.quick_reply {
   }
   .activities_tab .activities_items_table tbody tr label i {
     font-size: 15px;
+  }
+  .note_header h5 {
+    font-size: 12px;
+  }
+  .note_header p {
+    font-size: 11px;
   }
 }
 @media (max-width: 1180px) {
