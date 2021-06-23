@@ -764,6 +764,12 @@ select.modal_bordered_select_input.quick_reply {
 .voice_mail_send_now > p {
   font-size: 20px;
 }
+/* video mail modal */
+.video_email_bg_icon {
+  background: url(../images/single-contact/video.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
 /* direct mail modal */
 .direct_mail_pick_btns {
   white-space: nowrap;
