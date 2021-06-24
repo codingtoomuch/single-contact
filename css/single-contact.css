@@ -4,6 +4,7 @@
   --yellow-10: rgba(242, 200, 76, 0.1);
   --shade: #f0efff;
   --green: #6fcf97;
+  --orange: #f2994a;
   --green-10: rgba(39, 174, 95, 0.1);
   --red-10: rgba(255, 38, 74, 0.1);
   --dark-blue-05: rgba(19, 49, 89, 0.05);
@@ -35,6 +36,9 @@ body {
 .text-green {
   color: var(--green);
 }
+.text-orange {
+  color: var(--orange);
+}
 .text-yellow {
   color: var(--yellow);
 }
@@ -52,6 +56,9 @@ body {
 }
 .bg-dark-blue-10 {
   background: var(--dark-blue-10);
+}
+.bg-orange-10 {
+  background: rgba(242, 152, 74, 0.1);
 }
 .bg-dark-blue-05 {
   background: var(--dark-blue-05);
@@ -403,6 +410,7 @@ audio {
 }
 .activities_tab_header a {
   white-space: nowrap;
+  font-size: 16px;
 }
 .activities_buttons_groups {
   border-top: 1px solid;
@@ -420,6 +428,7 @@ audio {
   border: 1px solid var(--gray_dark);
   transition: 0.3s linear;
   height: 100%;
+  font-size: 14px;
 }
 .activities_buttons_groups .button_group a:hover i,
 .activities_buttons_groups .button_group a.active i {
@@ -1018,6 +1027,22 @@ select.modal_bordered_select_input.quick_reply {
     font-size: 12px !important;
   }
 }
+@media (max-width: 1630px) {
+  .activities_tab .activities_tab_header a {
+    font-size: 8px;
+  }
+  .activities_tab .activities_tab_header a i {
+    font-size: 13px;
+  }
+  .activities_tab .activities_tab_header a svg {
+    height: 10px !important;
+    width: 10px !important;
+  }
+  .activities_tab .activities_buttons_groups .button_group a {
+    font-size: 10px;
+    padding: 5px !important;
+  }
+}
 @media (max-width: 1500px) {
   .contact_details_top span {
     font-size: 12px;
@@ -1101,20 +1126,6 @@ select.modal_bordered_select_input.quick_reply {
   .single_message .message_body p {
     font-size: 12px;
   }
-  .activities_tab .activities_tab_header a {
-    font-size: 8px;
-  }
-  .activities_tab .activities_tab_header a i {
-    font-size: 13px;
-  }
-  .activities_tab .activities_tab_header a svg {
-    height: 10px !important;
-    width: 10px !important;
-  }
-  .activities_tab .activities_buttons_groups .button_group a {
-    font-size: 10px;
-    padding: 5px !important;
-  }
   .log_tab_single_file h6 {
     font-size: 12px;
   }
@@ -1125,6 +1136,9 @@ select.modal_bordered_select_input.quick_reply {
     height: 15px;
     width: 15px;
   }
+}
+
+@media (max-width: 1430px) {
 }
 @media (max-width: 1360px) {
   .single_message_box.left {
@@ -1147,6 +1161,19 @@ select.modal_bordered_select_input.quick_reply {
   }
   .log_tab_single_file .log_tabs_time {
     font-size: 8px;
+  }
+}
+
+@media (max-width: 1320px) {
+  .activities_tab .activities_buttons_groups .button_group {
+    height: 30px;
+  }
+  .activities_tab .activities_buttons_groups .button_group a i {
+    font-size: 12px;
+  }
+  .activities_tab .activities_buttons_groups .button_group a svg {
+    height: 11px;
+    width: 11px;
   }
 }
 @media (max-width: 1280px) {
@@ -1185,12 +1212,15 @@ select.modal_bordered_select_input.quick_reply {
     width: 8px !important;
     margin-right: 2px !important;
   }
+  .activities_tab .activities_buttons_groups .button_group a {
+    font-size: 7px;
+  }
   .activities_tab .activities_buttons_groups .button_group a i {
-    font-size: 12px;
+    font-size: 10px;
   }
   .activities_tab .activities_buttons_groups .button_group a svg {
-    height: 11px;
-    width: 11px;
+    height: 9px;
+    width: 9px;
   }
   .activities_tab .activities_items_table thead h5,
   .activities_tab .activities_items_table thead tr span {
@@ -1273,6 +1303,17 @@ select.modal_bordered_select_input.quick_reply {
   .single_message_box.right {
     padding-right: 25px;
   }
+  .activities_tab .activities_buttons_groups .button_group a {
+    padding: 3px !important;
+    font-size: 6px;
+  }
+  .activities_tab .activities_buttons_groups .button_group a i {
+    font-size: 9px;
+  }
+  .activities_tab .activities_buttons_groups .button_group a svg {
+    height: 8px;
+    width: 8px;
+  }
 }
 @media (max-width: 1100px) {
   .user_profile_tab_item .tabs-items {
@@ -1290,5 +1331,21 @@ select.modal_bordered_select_input.quick_reply {
   }
   .profile-outline-btn {
     font-size: 12px;
+  }
+}
+@media (max-width: 992px) {
+  .activities_tab .activities_buttons_groups .button_group a {
+    padding: 5px !important;
+    font-size: 10px;
+  }
+  .activities_tab .activities_buttons_groups .button_group:first-child a {
+    width: 30px;
+  }
+  .activities_tab .activities_buttons_groups .button_group a i {
+    font-size: 15px;
+  }
+  .activities_tab .activities_buttons_groups .button_group a svg {
+    height: 14px;
+    width: 14px;
   }
 }
